@@ -1,0 +1,20 @@
+<!--pages/message/message.wxml-->
+ <view style='width:100%;height:500rpx;background-color:white;padding-top:20rpx;'>
+        <view style='margin-left:20rpx'>
+              <view class='message'>
+                 <view>绑定收货人姓名:<input type='text' placeholder='收货人姓名' bindinput='username' value='{{username}}'></input></view>
+                 <view>绑定联系电话:<input type='text' placeholder='收货人电话' bindinput='phone' value='{{phone}}'></input></view>
+                 <view class="adress">绑定收货地址:
+                    <picker bindchange="changeRegin" mode = "region" value="{{region}}">
+                     <input class="input-text" style='color:#808080;' name="adress1" value='{{region[0]}} - {{region                       [1]}} - {{region[2]}}' disabled='true' bindinput='address1'/> 
+                    </picker>
+                    绑定具体收货地址:
+                    <input type="text" class="input-text" name="adress" placeholder="详细地点" bindinput='address2' value='{{address2}}'/>
+                </view>
+              </view>
+        </view>
+        <view class='container'><button class='messageTap' bindtap='formSubmitTap'>绑定信息</button><text style='font-size:30rpx'>(绑定信息后，商城购物时不必再填写信息)</text></view> 
+</view>
+<toast hidden="{{hide}}" bindchange="hideChange">
+{{message}}
+</toast>

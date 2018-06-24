@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/online/online",
+    "pages/shop/shop",
+    "pages/form/form",
+    "pages/our/our",
+    "pages/submit/submit",
+    "pages/account/account",
+    "pages/message/message"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#23af08",
+    "navigationBarTitleText": "AI小农",
+    "navigationBarTextStyle": "snow"
+  },
+    "tabBar": {
+      "color": "#707070",
+      "selectedColor": "#23af08",
+      "borderStyle": "#23af08",
+      "backgroundColor": "#ffffff",
+      "list": [
+        {
+          "pagePath": "pages/online/online",
+          "iconPath": "image/online.png",
+          "selectedIconPath": "image/online1.png",
+          "text": "在线预约"
+        },
+        {
+          "pagePath": "pages/shop/shop",
+          "iconPath": "image/shop.png",
+          "selectedIconPath": "image/shop1.png",
+          "text": "商城"
+        },
+        {
+          "pagePath": "pages/form/form",
+          "iconPath": "image/dingdan.png",
+          "selectedIconPath": "image/dingdan1.png",
+          "text": "我的订单"
+        },
+        {
+          "pagePath": "pages/our/our",
+          "iconPath": "image/lianxi.png",
+          "selectedIconPath": "image/lianxi1.png",
+          "text": "联系我们"
+        }
+      ]
+    }
+}

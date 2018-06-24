@@ -1,0 +1,111 @@
+<!--pages/online/online.wxml-->
+<view class='introduce'>
+<view class='title' style='text-align:center;'>AI小农规则</view>
+<view class='content'>
+AI小农为广大农户提供预约施肥撒药服务和商城交易服务,
+AI小农的预约流程:填写以下预约信息,然后点击预估价格,系统会为您预算价格并让您核对信息后提交预约,提交后会有客服与您联系.
+</view>
+</view>
+<view id="adduser">
+<view style='color:#23af08;text-align:center'>↓请逐项填写以下信息↓</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="wx">
+<view class="title">姓名:</view>
+<view class='form-group'>
+<input type="text" class="input-text" name="username" placeholder="请输入您的姓名" bindchange='changeName' value='{{name}}'/>
+</view>
+</view>
+<view class="phone">
+<view class="title">联系方式:</view>
+<view class='form-group1'>
+<input type="text" class="input-text" name="phone" placeholder="请输入联系方式" bindchange='changePhone'/>
+</view>
+</view>
+<view class="adress">
+  <view class="adress1">请选择服务地点:</view>
+  <picker bindchange="changeRegin" mode = "region" value="{{region}}">
+  <input class="input-text" style='color:#808080;' name="adress1" value='{{region[0]}} - {{region[1]}} - {{region[2]}}' disabled='true'/>
+  </picker>
+  <view class="adress1">具体服务地点:</view>
+  <input type="text" class="input-text" name="adress" placeholder="详细地点"/>
+</view>
+
+<view class='time'>
+<view class="section">  
+<view>请选择预约时间:</view>
+  <picker mode="date" value="{{date}}" start="2018-01-01" end="2022-1-1" bindchange="bindDateChange">  
+    <input class="date" name="date" value='{{dates}}' disabled='true' style='font-size:35rpx'/>    
+  </picker>  
+</view>
+<view class="section">  
+  <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">  
+    <input class="times" name="times" value='{{times}}' disabled='true' style='font-size:35rpx'/> 
+  </picker>  
+</view>
+</view>  
+<view class="ground">
+<view class="title">土地面积(亩):</view>
+<view class='form-group'>
+<input name="mu" bindchange='changeMu' />
+ <!-- <slider name="mu" show-value block-size="20" block-color="#23af08" max="1000" bindchange='changeMu'></slider>  -->
+</view>
+</view>
+<view class="select">
+<view class="title">农作物选择:(需要服务的作物)</view>
+<view class='form-group'>
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+<view class="picker">
+<input type="hidden" disabled="true" name="addr" value="{{array[index]}}" placeholder="{{array[index]}}"
+style="height:70rpx;border:1px solid #e7e7e7e7;color:#808080" class="input-text"/>
+</view>
+</picker>
+</view>
+</view>
+<view class="server">
+<view class="section__title">请选择服务类型:</view>
+<view class='form-group'>
+<checkbox-group name="server" bindchange='changeServer'>
+<label><checkbox value="施肥"/>施肥</label>
+<label><checkbox value="撒药" style='margin-left:20rpx'/>撒药</label>
+</checkbox-group>
+</view>
+</view>
+<view class="btn">
+<button form-type='submit'>预估价格</button>
+<button formType="reset">清空信息</button>
+</view>
+</form>
+<!-- 黑框提示并消失 -->
+<toast hidden="{{toast1Hidden}}" bindchange="toast1Change">
+{{notice_str}}
+</toast>
+<!-- 确认框 及 提示框 -->
+<view class="page__bd">
+<modal title="确认" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one">
+确认提交么？
+</modal>
+<modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">
+<view> 提示 </view>
+<view> 清空成功 </view>
+</modal>
+<modal class="modal" hidden="{{modalHiddenName}}" no-cancel bindconfirm="modalChangeName">
+<view> 提示: </view>
+<view> 请填写姓名 </view>
+</modal>
+<modal class="modal" hidden="{{modalHiddenPhone}}" no-cancel bindconfirm="modalChangePhone">
+<view> 提示 </view>
+<view> 请填写联系方式 </view>
+</modal>
+<modal class="modal" hidden="{{modalHiddenMu}}" no-cancel bindconfirm="modalChangeMu">
+<view> 提示 </view>
+<view> 请输入土地面积 </view>
+</modal>
+<modal class="modal" hidden="{{modalHiddenServer}}" no-cancel bindconfirm="modalChangeServer">
+<view> 提示 </view>
+<view> 请选择服务类型 </view>
+</modal>
+<toast hidden="{{hide}}" bindchange="hideChange">
+{{message}}
+</toast>
+</view>
+</view>

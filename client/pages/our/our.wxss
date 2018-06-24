@@ -1,0 +1,50 @@
+/* pages/our/our.wxss */
+/**index.wxss**/
+ .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 30rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+   margin-bottom: 30px;
+}
+.my-item{
+  width: 100%;
+	border-bottom: 1rpx solid #ddd;
+	padding: 20rpx;
+	font-size: 32rpx;
+	background: #fff
+  no-repeat 98% 50% / auto 36rpx;
+}
+.my-item image{
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+	vertical-align: -6rpx;
+}
+/* .lineSpace {
+    width: 100%;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-top: -1px;
+    float: left
+} */
+.allDeposit {
+    color: #2cc39a;
+}
+.page-body-button{
+  margin-top:20px;
+  line-height: 2;
+}
+
+

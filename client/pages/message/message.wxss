@@ -1,0 +1,23 @@
+/* pages/message/message.wxss */
+page{
+  background: #eff3f5
+}
+.message{
+  margin-left: 20rpx;
+}
+.message view{
+  margin-bottom: 20rpx;
+}
+.message input{
+    width: 90%;
+    border: 1px solid #e7e7e7;
+    border-radius: 10rpx;
+}
+.messageTap{
+  width: 80%;
+  color: snow;
+  background: #23af08;
+  margin-top: 100rpx;
+  /* position: fixed;
+  bottom: 400rpx  */
+}

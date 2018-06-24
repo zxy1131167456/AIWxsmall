@@ -1,0 +1,42 @@
+/* pages/account/account.wxss */
+page{
+  background: #eff3f5
+}
+.message{
+  margin-left: 20rpx;
+}
+.message view{
+  margin-bottom: 20rpx;
+}
+.message input{
+    width: 90%;
+    border: 1px solid #e7e7e7;
+    border-radius: 10rpx;
+}
+.wrapper{
+  width: 95%;
+  font-size: 35rpx;
+   background: #ffffff; 
+  margin: 20rpx auto;
+  padding: 20rpx 0;
+}
+.wrapper .form{
+  width: 95%;
+  height: 250rpx;
+  background: #eff3f5;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+image{
+  width: 180rpx;
+  height: 200rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+.foot{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0;
+  background: snow;
+}

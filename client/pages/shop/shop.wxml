@@ -1,0 +1,60 @@
+<!--pages/shop/shop.wxml-->
+	<view class="aside flex-wrap flex-direction-col">
+		<block wx:for="{{navList}}">
+			<view class="type-nav {{curNav == item.id ? 'selected' : ''}}" bindtap="selectNav" data-index="{{index}}" data-id="{{item.id}}">{{item.name}}</view>
+		</block>
+	</view>
+	<!-- content -->
+	<view class="content">
+		<view wx:for="{{dishesList[curIndex]}}">
+			 <view class="dish flex-wrap flex-direction-row" catchtap="selectDish" data-dish="{{item.id}}">
+        <image src='{{item.url}}' class='img'></image>  
+				<view class="name">
+					<view class="title">{{item.name}}</view>
+					<view class='price'>￥{{item.prices}}</view>
+          <view class="stepper">  
+    <!-- 减号 -->  
+    <text class="{{minusStatus}}" bindtap="bindMinus" data-index='{{index}}'>-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="bindManual" bindblur='bindManual' data-index='{{index}}' value="{{item.num}}"/>  
+    <!-- 加号 -->  
+    <text class="normal" bindtap="bindPlus" data-index='{{index}}'>+</text>  
+          </view>
+		    </view>  
+			 </view> 
+		</view>
+	</view>
+
+<view style='width:100%;height:100rpx;'></view>
+
+<view class="cart" wx:if='{{num}}' bindtap='cartInout'>
+  <view class='cartImg'><image src='/image/cart.png'></image></view>
+  <view class='numPrice'>	<text class="total">购物车：×{{num}}</text>
+  <view style=''>价格共：￥{{price}}</view></view>
+  <view class='account' bindtap='accountTap'>去结算</view>
+</view>
+<!--隐藏区域  -->
+<view class='hidden' wx:if="{{choose}}" bindtap='hideModal'></view>
+<view class='choose' wx:if="{{choose}}" animation='{{animationData}}'>
+<view>
+<text>购物车</text>
+</view>
+  <view wx:for="{{cart}}" style='width:100%;padding-top:30rpx;'>
+      <text style='margin-left:30rpx'>{{item.name}}</text>
+      <text style=''>￥{{item.prices}}</text>
+    <view style='float:right;margin-right:30rpx'> 
+    <view class="stepper">  
+    <!-- 减号 -->  
+    <text class="{{minusStatus}}" bindtap="bindMinus" data-index='{{index}}'>-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="bindManual" bindblur='bindManual' data-index='{{index}}' value="{{item.num}}"/>  
+    <!-- 加号 -->  
+    <text class="normal" bindtap="bindPlus" data-index='{{index}}'>+</text>
+    </view>
+    </view>
+  </view>
+  <view style='width:100%;height:80rpx'></view>
+</view>
+<toast hidden="{{hide}}" bindchange="hideChange">
+{{message}}
+</toast>

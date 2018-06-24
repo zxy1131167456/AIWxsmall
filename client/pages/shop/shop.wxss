@@ -1,0 +1,170 @@
+/* pages/shop/shop.wxss */
+.aside{
+	width:20%;
+  height: 1200rpx;
+	border-right: 1px solid #ddd;
+	font-size: .85rem;
+}
+.type-nav{
+	position: relative;
+	padding:.7rem .3rem;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	z-index: 10;
+}
+.selected{
+  color: #23af08;
+  border-right: 5rpx solid #23af08
+}
+.content{
+  width: 80%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.dish{
+  width: 100%;
+  height: 300rpx;
+	/* margin-left: 1rem;
+  margin-top: -200rpx;
+	padding: 1rem; */
+	border-bottom: 1px solid #ddd;
+   /* background: #ccc  */
+}
+.dish .name{
+  float: left;
+   margin-left: 10%;
+   margin-top: 50rpx;
+  /* background: #23af08; */
+  /* margin-left: 100rpx;
+  margin-top: -20rpx */
+}
+.dish .title{
+	display: block;
+	font-size: 1rem;
+  margin-bottom: 10rpx
+}
+.dish .price{
+  color: orange;
+  margin-bottom: 10rpx;
+}
+.dish p{
+	color: orange;
+	font-size: .75rem;
+}
+.dish .add-btn{
+	width: 3rem;
+	text-align: right;
+}
+
+.cart{
+  width: 100%;
+  height: 80rpx;
+  color: snow;
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  padding: 20rpx;
+	background: #23af08;
+  z-index: 999;
+}
+.cart .cartImg{
+  width: 150rpx;
+  height: 150rpx;
+  background: #f40;
+  border-radius: 50%;
+  position: fixed;
+  left: 0;
+  bottom: 10rpx;
+}
+.cart .cartImg image{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  left:25rpx; 
+  bottom: 30rpx;
+}
+.cart .numPrice{
+  position: fixed;
+  left: 180rpx;
+  bottom: 10rpx;
+}
+.cart .account{
+  width: 150rpx;
+  height: 60rpx;
+  font-size: 40rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 30rpx;
+  background: #f40;
+}
+/*加减号主容器*/  
+.stepper {  
+    width: 80px;  
+    height: 26px;  
+    /*给主容器设一个边框*/  
+    border: 1px solid #ccc;  
+    border-radius: 3px;  
+    z-index: 1
+}  
+  
+/*加号和减号*/  
+.stepper text {  
+    width: 19px;  
+    line-height: 26px;  
+    text-align: center;  
+    float: left;  
+}  
+  
+/*数值*/  
+.stepper input {  
+    width: 40px;  
+    height: 26px;  
+    float: left;  
+    margin: 0 auto;  
+    text-align: center;  
+    font-size: 12px;  
+    /*给中间的input设置左右边框即可*/  
+    border-left: 1px solid #ccc;  
+    border-right: 1px solid #ccc;  
+}  
+  
+/*普通样式*/  
+.stepper .normal{  
+    color: black;  
+}  
+  
+/*禁用样式*/  
+.stepper .disabled{  
+    color: #ccc;  
+}  
+
+.dish image{
+  width: 200rpx;
+  height: 200rpx;
+  float: left;
+  margin-top: 50rpx;
+  margin-left: 10%;
+}
+
+.choose{
+  width: 100%;
+  position: fixed;
+  bottom: 100rpx;
+  background: #fff;
+  z-index: 900;
+}
+.hidden{
+    width: 100%;
+    height: 1000rpx;
+    background: #000;
+    opacity: 0.6;
+    position: fixed;
+    top: 0
+}

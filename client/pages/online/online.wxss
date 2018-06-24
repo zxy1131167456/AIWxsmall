@@ -1,0 +1,107 @@
+/* pages/online/online.wxss */
+page{
+  padding: 0;
+  margin: 0;
+  background: #eff3f5
+}
+.introduce{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+  background: #FFFFFF
+}
+.introduce .title{
+  position: relative;
+  top: 20rpx;
+  color: #23af08;
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.introduce .content{
+    font-family: "Verdana"; 
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 20rpx;
+    line-height: 60rpx;
+}
+#adduser{
+  width: 90%;
+  height: 1550rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+}
+.input-text{
+  font-size: 35rpx;
+}
+#adduser .wx{
+  width: 100%;
+  height: 100rpx;
+  margin:20rpx 30rpx;
+  margin-bottom: 40rpx;
+}
+#adduser .phone{
+  width: 100%;
+  height: 100rpx;
+  margin:20rpx 30rpx;
+  margin-bottom: 40rpx;
+}
+#adduser .adress{
+  width: 100%;
+  height: 100rpx;
+  margin:20rpx 30rpx;
+  margin-bottom: 160rpx;
+}
+#adduser .time{
+  width: 100%;
+  height: 100rpx;
+  margin:20rpx 30rpx;
+  margin-bottom: 130rpx;
+}
+#adduser .time .date{
+  margin-bottom: 20rpx;
+}
+#adduser .time input{
+  color: #707070;
+}
+#adduser .ground{
+    width: 100%;
+    height: 100rpx;
+    margin:20rpx 30rpx;
+    margin-bottom: 50rpx;
+}
+#adduser .select{
+    width: 100%;
+    height: 100rpx;
+    margin:20rpx 30rpx;
+    margin-bottom: 50rpx;
+}
+#adduser .server{
+    width: 100%;
+    height: 100rpx;
+    margin:20rpx 30rpx;
+    margin-bottom: 50rpx;
+}
+#adduser .btn{
+    width: 100%;
+    height: 100rpx;
+    margin-top:20rpx;
+}
+#adduser .btn button{
+  width: 90%;
+  margin-top: 30rpx;
+  color: snow;
+  background: #23af08;
+
+}
+input{
+  width: 90%;
+  height: 60rpx;
+  border: 1px solid #e7e7e7;
+  border-radius: 10rpx;
+  /* text-indent: 10rpx; */
+}

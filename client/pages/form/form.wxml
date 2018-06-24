@@ -1,0 +1,82 @@
+<!--pages/form/form.wxml wx:if="{{username}}"-->
+ <view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待受理</view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待收货</view>
+  <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已受理</view>
+  <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">已收货</view>
+</view>
+<view class="swiper-tab-temp"></view>
+<view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" bindchange="bindChange" style='height:{{height}}rpx'>
+    <swiper-item style="background-color:#eff3f5;"> 
+    <view wx:if="{{form.length != 0}}">
+    <block wx:for="{{form}}" wx:for-item="form">
+    <view class='dingdan'>
+    <view style='margin-left:50rpx;margin-bottom:20rpx;font-size:35rpx;font-weight:bold;'>订单信息:<view style='float:right;margin-right:50rpx;color:red'>待完成</view></view>
+    <view style='width:100%;height:1px;background:#23af08;margin-top:10rpx;margin-bottom:10rpx'></view>  
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;margin-bottom:20rpx;color:#000'>姓名:{{form.username}}</view>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;margin-bottom:20rpx;color:#000'>预约服务:{{form.server}}</view>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;margin-bottom:20rpx;color:#000'>预约时间:{{form.date}}/{{form.times}}</view>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;margin-bottom:20rpx;color:#000;'>预估价格:￥{{form.price}}</view>
+    </view>
+    <view class='finish' bindtap='confirmFinish' data-index='{{index}}'>确认完成</view>
+    <view style='width:100%;height:10px;background:#eff3f5;'></view>
+    </block> 
+    </view>
+    <view class='none' wx:else><view class='container'><image src='/image/none.png' style='width:150rpx;height:150rpx;margin-bottom:30rpx'></image>您还没有任何待受理订单哦！</view></view>
+     </swiper-item>
+    <swiper-item style="background-color:#eff3f5">
+    <view wx:if="{{cart.length>0}}">
+    <block wx:for="{{cart}}"> 
+    <block wx:for="{{item}}">
+    <view class='dingdan1'>
+    <image src='{{item.url}}' style='width:180rpx;height:200rpx;margin-top:40rpx;margin-left:40rpx'></image>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:280rpx;margin-top:-200rpx;color:#000'>名称：{{item.name}}</view>
+    <view style='margin-left:280rpx;margin-top:50rpx;color:#000'>￥{{item.prices}}<view style='float:right;margin-right:200rpx;'>×{{item.num}}</view></view>
+    </view>
+    </block>
+    <view style='width:200rpx;height:100rpx;font-size:35rpx;margin-left:550rpx;color:snow;background:#23af08; display: flex;align-items:center;justify-content:center;margin-top:-100rpx' bindtap='confirmFinish1' data-index='{{index}}'>确认收货</view>
+     <view style='width:100%;height:20rpx;background:#eff3f5;'></view> 
+    </block>  
+    </view> 
+    <view class='none' wx:else><view class='container'><image src='/image/none.png' style='width:150rpx;height:150rpx;margin-bottom:30rpx'></image>您还没有任何待收货订单哦！</view></view> 
+    </swiper-item>
+    <swiper-item style="background-color:#eff3f5">
+    <view wx:if="{{finish.length>0}}">
+    <block wx:for="{{finish}}">
+    <view class='dingdan2'>
+    <view class='dingdan-item'>
+    <view style='margin-left:50rpx;margin-bottom:20rpx;font-size:35rpx;font-weight:bold;'>订单信息:<view style='float:right;margin-right:50rpx;color:red'>已完成</view></view>
+    <view style='width:100%;height:1px;background:#23af08;margin-top:10rpx;margin-bottom:10rpx'></view>  
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;color:#000'>姓名:{{item.username}}</view>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;color:#000'>预约服务:{{item.server}}</view>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;color:#000'>预约时间:{{item.date}}/{{item.times}}</view>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:50rpx;color:#000;'>总价:￥{{item.price}}</view>
+    </view>
+    </view>
+    </block>
+      </view>
+<view class='none' wx:else><view class='container'><image src='/image/none.png' style='width:150rpx;height:150rpx;margin-bottom:30rpx'></image>您还没有完成任何订单哦！</view></view> 
+    </swiper-item>
+    <swiper-item style="background-color:#eff3f5;">
+    <view wx:if="{{finish1.length>0}}">
+    <block wx:for="{{finish1}}"> 
+    <block wx:for="{{item}}">
+    <view class='dingdan1'>
+    <image src='{{item.url}}' style='width:180rpx;height:200rpx;margin-top:40rpx;margin-left:40rpx'></image>
+    <view style='width:80%;font-size:35rpx;text-align:left;margin-left:280rpx;margin-top:-200rpx;color:#000'>名称：{{item.name}}</view>
+    <view style='margin-left:280rpx;margin-top:50rpx;color:#000'>￥{{item.prices}}<view style='float:right;margin-right:200rpx;'>×{{item.num}}</view></view>
+    </view>
+    </block>
+    <view style='width:100%;height:10px;background:#eff3f5;'></view> 
+    <view class='finish1' bindtap='confirmFinish' data-index='{{index}}'>已收货</view>
+    </block>  
+    </view> 
+    <view class='none' wx:else><view class='container'><image src='/image/none.png' style='width:150rpx;height:150rpx;margin-bottom:30rpx'></image>您还没有任何已收货订单哦！</view></view> 
+    </swiper-item>
+  </swiper>
+</view> 
+<view class='container'><view style='position:fixed;bottom:0' hidden='{{loading}}'>正在加载...</view></view>
+<toast hidden="{{hide}}" bindchange="hideChange">
+{{message}}
+</toast>

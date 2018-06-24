@@ -1,0 +1,24 @@
+<!--pages/our/our.wxml-->
+<!--index.wxml-->
+   <view class="userinfo" bindtap='bindViewTap' style='background:#23af08;color:#000'>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname" style='color:snow'>{{userInfo.nickName}}</text>
+  </view>
+   <view class="my-list" style='width:95%;'>
+		 <view class="my-item"   url="../../pages/add/add" catchtap='messageEvent'> 
+			<image src="/image/shouhuodizhi.png" mode="aspectFit"></image>
+           <text>绑定信息</text>
+           <label bindtap="allDeposit" style=' font-size: 12px;font-style:inherit; float: right;margin-right: 0px;'>></label> 
+		 </view>
+    <view class="my-item" catchtap="clearStorage">
+			<image src="/image/delete.png" mode="aspectFit"></image>
+			<text>清除订单(已完成和已收货)</text>
+       <label bindtap="allDeposit" style=' font-size: 12px;font-style:inherit; float: right;margin-right: 0px;'>></label> 
+		</view> 
+		<view class="my-item" catchtap="callEvent">
+			<image src="/image/call.png" mode="aspectFit"></image>
+			<text>联系我们</text>
+       <label bindtap="allDeposit" style=' font-size: 12px;font-style:inherit; float: right;margin-right: 0px;'>></label> 
+		</view>  
+    <button open-type="contact" session-from='weapp' style='width:100%;color:snow;background:#23af08;border-radius:0;position:fixed;bottom:0'><text style='margin-left:10rpx'>在线咨询</text></button>
+	</view>

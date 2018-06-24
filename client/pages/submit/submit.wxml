@@ -1,0 +1,72 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="list">
+        <view class="list-item">
+            <view><text>预估价格为：{{price}}元</text></view>
+        </view>
+    </view>
+    <view style='color:#007AFF;margin-top:10rpx'><text>请核对预约信息</text></view>
+<view id="adduser">
+<form bindsubmit="formSubmit" bindreset="formReset">
+<view class="wx">
+<view class="title">姓名:</view>
+<view class='form-group'>
+<input type="text" class="input-text" name="username" placeholder="请输入您的姓名" value='{{username}}' disabled='true'/>
+</view>
+</view>
+<view class="phone">
+<view class="title">电话号:</view>
+<view class='form-group1'>
+<input type="text" class="input-text" name="phone" placeholder="请输入电话号" value='{{phone}}' disabled='true'/>
+</view>
+</view>
+<view class="adress">
+  <view class="adress1">服务地点:</view>
+  <picker bindchange="changeRegin" mode = "region" value="{{region}}">
+  <input class="tui-picker-detail" style='color:#808080' name="adress1" value='{{adress1}}' disabled="true"/>
+  </picker>
+  <view class="adress1">具体服务地点:</view>
+  <input type="text" class="input-text" name="adress" placeholder="详细地点" value='{{adress}}' disabled="true"/>
+</view>
+
+<view class='time'>
+<view class="section">  
+<view>预约时间:</view> 
+    <input class="date" name="date" value='{{date}}' disabled="true"/>    
+</view>
+<view class="section">  
+    <input class="times" name="times" value='{{times}}' disabled="true"/> 
+</view>
+</view>
+
+<view class="ground">
+<view class="title">土地面积(亩):</view>
+<input class='form-group' wx:if='{{mu}}' value='{{mu}}亩' disabled='true'/>
+</view>
+<view class="select">
+<view class="title">农作物选择:</view>
+<view class='form-group'>
+<view class="picker">
+<input type="hidden" disabled="true" name="addr" value="{{array[index]}}" placeholder="点击选择" value='{{addr}}'/>
+</view>
+</view>
+</view>
+<view class="server">
+<view class="section__title">服务类型:</view>
+<view class='form-group'>
+{{server}}
+</view>
+</view>
+<view class="btn">
+<button formType="submit">提交预约</button>
+</view>
+</form>
+<!-- 黑框提示并消失 -->
+<toast hidden="{{toast1Hidden}}" bindchange="toast1Change">
+{{notice_str}}
+</toast>
+<toast hidden="{{toastHiddenDate}}" bindchange="toastChangeDate">
+恭喜您！预约成功！
+</toast>
+</view>
+</view>
